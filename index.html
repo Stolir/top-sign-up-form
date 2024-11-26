@@ -9,50 +9,52 @@
 </head>
 <body>
     <div class="flex-row">
-        <div class="hero-banner flex-row">
-            <div class="image-container">
-                <img width="auto" height="100%" src="assets/aaron-huber-V09Io5ln-Qo-unsplash.jpg" alt="foggy-mountain-view">
-            </div>
-            <div class="hero-text">
-                SAQIB MOTORS
-            </div>
-        </div>
         <div class="form-container flex-column">
+            <div class="hero-text flex-column">
+                <div>SAQIB MOTORS</div>
+                <div class="slogan">classics that stand the test of time</div>
+            </div>
             <form action="/page" method="get" class="flex-row">
 
                 <div class="flex-column">
-                    <label for="first-name">First Name *</label>
-                    <input type="text" id="first-name" placeholder="Uzair" required>
+                    <label for="first-name">First Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="first-name" placeholder="Uzair" pattern="[A-Za-z]{2,}" autocomplete="given-name" required>
                     <span class="required"></span>
                 </div>
 
                 <div class="flex-column">
-                    <label for="last-name">Last Name *</label>
-                    <input type="text" id="last-name" placeholder="Saqib" required>
+                    <label for="last-name">Last Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="last-name" placeholder="Saqib" pattern="[A-Za-z]{2,}" autocomplete="family-name" required>
                     <span class="required"></span>
                 </div>
 
                 <div class="flex-column">
-                    <label for="user-email">Email *</label>
-                    <input type="email" id="user-email" placeholder="yourname@example.com" required>
+                    <label for="user-email">Email <span class="required" aria-label="required">*</span></label>
+                    <input type="email" id="user-email" placeholder="yourname@example.com" pattern=".{3,}@[A-Za-z]{2,}\.[A-Za-z]{2,}" autocomplete="email" required>
                     <span class="required"></span>
                 </div>
 
                 <div class="flex-column">
                     <label for="user-phone">Phone Number</label>
-                    <input type="tel" id="user-phone" placeholder="+1 100 123-4567">
+                    <input type="tel" id="user-phone" placeholder="+1 100 123-4567" pattern="\+\d{6,17}" title="+1234567890" autocomplete="tel">
                 </div>
 
                 <div class="flex-column">
-                    <label for="user-password">Password *</label>
-                    <input type="password" id="user-password" placeholder="**********" required>
-                    <span class="required"></span>
+                    <label for="user-password">Password <span class="required" aria-label="required">*</span></label>
+                    <input type="password" id="user-password" minlength="6" maxlength="16" placeholder="**********" required>
+                    <span class="invalid-msg"></span>
                 </div>
 
                 <div class="flex-column">
                     <button type="submit">Sign up</button>
                 </div>
+                <div class="login">Already a member? <a href="">Login</a></div>
             </form> 
+        </div>
+        <div class="hero-banner flex-row">
+            <div class="image-container">
+                <img width="auto" height="100%" src="assets/pexels-pixabay-461824.jpg" alt="foggy-mountain-view">
+            </div>
         </div>
     </div>
 </body>
