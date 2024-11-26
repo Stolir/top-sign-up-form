@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "zanie-brovia";
+    font-family: "neothic";
     src: 
-        url(fonts/zanie-brovia-webfont.woff) format(woff),
-        url(fonts/zanie-brovia-webfont.woff2) format(woff2);
+        url(fonts/Neothic/neothic-webfont.woff) format(woff),
+        url(fonts/Neothic/neothic-webfont.woff2) format(woff2);
     font-style: normal;
     font-weight: normal;
 }
@@ -66,23 +66,25 @@
   #root, #__next {
     isolation: isolate;
   }
+  
 body {
     background-color: #363636;
+    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .flex-row {
     display: flex;
 }
+
 .flex-column {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .image-container {
     height: 100vh;
     width: auto;
+    flex: 1 0 auto;
 }
 
 .hero-banner {
@@ -98,4 +100,65 @@ body {
     font-size: 70px;
     color: #FAFAFA;
     text-wrap: nowrap;
+}
+
+.form-container {
+    flex: 1 1 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 25px;
+    width: 600px;
+    height: 350px;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #131313;
+    background-color: rgb(168, 168, 168);
+    box-shadow: 30px -15px #131313;
+}
+
+label {
+    display: block;
+    font-family: "neothic";
+}
+
+form input {
+    background-color: inherit;
+    padding: 5px;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 35px;
+    align-items: flex-start;
+    border: none;
+    border-bottom: 1px solid #131313;
+}
+
+#user-email {
+    flex: 2 1 0;
+    width: 415px;
+}
+
+div:has(button) {
+  width: 100%;
+}
+
+button {
+    border: none;
+    display: inline-block;
+    padding: 5px;
+    width: fit-content;
+    margin-left: 66px;
+    font-family: "neothic";
+    color: #131313;
+    background-color: #D6D9DC;
+}
+
+input:focus {
+  outline: none;
 }
