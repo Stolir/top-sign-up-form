@@ -162,3 +162,31 @@ button {
 input:focus {
   outline: none;
 }
+
+input:user-invalid:required,
+label:has(+ input:user-invalid:required),
+.required {
+  color: rgb(139, 9, 9);
+}
+
+input:user-invalid {
+  border-color: rgb(139, 9, 9);
+}
+
+input + span {
+  position: relative;
+}
+
+span::after {
+  content: " ";
+  position: absolute;
+}
+
+input:user-invalid + span::after {
+  content: "* This field is required";
+  font-size: smaller;
+}
+
+input:user-valid {
+  border-color: green;
+}
